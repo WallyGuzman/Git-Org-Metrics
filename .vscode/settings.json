@@ -1,0 +1,9 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.ruff_cache": true,
+        "**/.pytest_cache": true,
+    }
+}

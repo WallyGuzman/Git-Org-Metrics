@@ -1,0 +1,25 @@
+{
+	"name": "Dev Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+				"python.terminal.activateEnvInSelectedTerminal": true
+			},
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ms-python.python",
+				"ms-python.debugpy",
+				"charliermarsh.ruff"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"postCreateCommand": "uv sync --frozen --all-packages"
+}

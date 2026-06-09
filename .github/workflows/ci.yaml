@@ -1,0 +1,44 @@
+name: CI
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [mainline]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b  # v8.1.0
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          uv sync --frozen --all-packages
+
+      - name: Audit dependencies
+        run: |
+          uv audit
+          uv run pip-audit --require-hashes -r requirements.txt
+
+      - name: Run type checks
+        run: |
+          uv run ty check
+
+      - name: Run linting checks
+        run: |
+          uv run ruff check
+
+      - name: Run tests with Pytest
+        run: |
+          uv run pytest

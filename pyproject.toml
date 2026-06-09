@@ -1,0 +1,19 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "Template project for Python repos"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pip-audit>=2.10.0",
+    "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
+    "ruff>=0.15.15",
+    "ty>=0.0.42",
+]
+
+[tool.uv]
+exclude-newer = "7 days"
