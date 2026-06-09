@@ -3,5 +3,6 @@ minimum_release_age = "7d"
 
 [tools]
 act = "0.2.89"
+steampipe = "2.4.4"
 uv = "0.11.19"
 zizmor = "1.25.2"

@@ -1,5 +1,5 @@
 def main():
-    print("Hello from Python-Template!")
+    print("Hello from Git-Org-Metrics!")
 
 
 if __name__ == "__main__":

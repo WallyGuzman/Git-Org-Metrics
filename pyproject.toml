@@ -1,10 +1,12 @@
 [project]
-name = "python-template"
+name = "git-org-metrics"
 version = "0.1.0"
-description = "Template project for Python repos"
+description = "Experiment to visualize Git repo metrics in static page."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "duckdb>=1.5.3",
+]
 
 [dependency-groups]
 dev = [

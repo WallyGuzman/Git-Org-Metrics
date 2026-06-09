@@ -32,6 +32,34 @@ url = "https://github.com/nektos/act/releases/download/v0.2.89/act_Darwin_x86_64
 checksum = "sha256:0f8cf866ad7e32421a219fc551a0a0ea5d12ead464de12ebfeafd334a5973b50"
 url = "https://github.com/nektos/act/releases/download/v0.2.89/act_Windows_x86_64.zip"
 
+[[tools.steampipe]]
+version = "2.4.4"
+backend = "aqua:turbot/steampipe"
+
+[tools.steampipe."platforms.linux-arm64"]
+checksum = "sha256:77b37e8a19db34c793cfd252dc63e38402defc567f1a7fc03f7f943e83bb341e"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_linux_arm64.tar.gz"
+
+[tools.steampipe."platforms.linux-arm64-musl"]
+checksum = "sha256:77b37e8a19db34c793cfd252dc63e38402defc567f1a7fc03f7f943e83bb341e"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_linux_arm64.tar.gz"
+
+[tools.steampipe."platforms.linux-x64"]
+checksum = "sha256:a40fdf197527d585c6fd9737b06446f5e7b2245e55918da04adb2c10e101c3e4"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_linux_amd64.tar.gz"
+
+[tools.steampipe."platforms.linux-x64-musl"]
+checksum = "sha256:a40fdf197527d585c6fd9737b06446f5e7b2245e55918da04adb2c10e101c3e4"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_linux_amd64.tar.gz"
+
+[tools.steampipe."platforms.macos-arm64"]
+checksum = "sha256:5cbb011c8ba44b65cbf69bc06d3a7f0da238856af05a13026296d200f3c0863f"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_darwin_arm64.zip"
+
+[tools.steampipe."platforms.macos-x64"]
+checksum = "sha256:39f8bbea0ae8423708dbcda8d89949793def6c32ea5e598eb8d2bb01421bca6d"
+url = "https://github.com/turbot/steampipe/releases/download/v2.4.4/steampipe_darwin_amd64.zip"
+
 [[tools.uv]]
 version = "0.11.19"
 backend = "aqua:astral-sh/uv"

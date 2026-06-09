@@ -1,4 +1,4 @@
-# Python-Template
-[![CI](https://github.com/WallyGuzman/Python-Template/actions/workflows/ci.yaml/badge.svg)](https://github.com/WallyGuzman/Python-Template/actions/workflows/ci.yaml)
+# Git-Org-Metrics
+[![CI](https://github.com/WallyGuzman/Git-Org-Metrics/actions/workflows/ci.yaml/badge.svg)](https://github.com/WallyGuzman/Git-Org-Metrics/actions/workflows/ci.yaml)
 
-Project template in Python.
+Experiment to visualize Git repo metrics in static page.
