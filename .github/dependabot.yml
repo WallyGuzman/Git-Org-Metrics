@@ -9,6 +9,10 @@ updates:
       default-days: 7
     exclude-paths:
       - "requirements.txt"
+    groups:
+      uv-dependencies:
+        patterns:
+          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -16,6 +20,10 @@ updates:
       interval: "weekly"
     cooldown:
       default-days: 7
+    groups:
+      actions-dependencies:
+        patterns:
+          - "*"
 
   - package-ecosystem: "pre-commit"
     directory: "/"
