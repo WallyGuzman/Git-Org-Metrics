@@ -6,6 +6,8 @@ permissions:
 on:
   push:
     branches: [mainline]
+  pull_request:
+    branches: [mainline]
 
 jobs:
   build-and-test:
