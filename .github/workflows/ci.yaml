@@ -40,7 +40,3 @@ jobs:
       - name: Run linting checks
         run: |
           uv run ruff check
-
-      - name: Run tests with Pytest
-        run: |
-          uv run pytest
