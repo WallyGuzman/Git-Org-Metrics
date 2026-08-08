@@ -1,5 +1,5 @@
-INSTALL httpfs; -- Use OpenSSL for encryption
-ATTACH 'data/ci_metrics.db' AS ci_metrics (ENCRYPTION_KEY getenv('DUCKDB_ENCRYPTION_KEY'));
+-- Set storage version to match evidence
+ATTACH 'data/ci_metrics.db' AS ci_metrics (STORAGE_VERSION 'v1.4.0');
 
 CREATE OR REPLACE PERSISTENT SECRET sp_pg_secret (
     TYPE postgres,

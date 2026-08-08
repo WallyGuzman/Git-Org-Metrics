@@ -1,7 +1,6 @@
-INSTALL httpfs; -- Use OpenSSL for encryption
-ATTACH 'data/ci_metrics.db' AS ci_metrics (ENCRYPTION_KEY getenv('DUCKDB_ENCRYPTION_KEY'));
-
 ATTACH '' AS steampipe (TYPE postgres, SECRET sp_pg_secret);
+
+SET preserve_insertion_order=false;
 
 CREATE OR REPLACE TABLE ci_metrics.github_jobs AS
 FROM POSTGRES_QUERY('steampipe', '
@@ -38,7 +37,7 @@ FROM POSTGRES_QUERY('steampipe', '
     from
       steampipe.github.github_actions_repository_workflow_run r
     where
-      r.created_at > now() - interval ''1 day''
+      r.created_at > now() - interval ''7 days''
       and status not in (''waiting'', ''pending'', ''requested'', ''queued'', ''in_progress'', ''neutral'')
       and (r.repository_full_name, r.workflow_id) in (
         select
@@ -51,8 +50,10 @@ FROM POSTGRES_QUERY('steampipe', '
 
   select
     j.repository_full_name,
+    j.workflow_name,
     j.run_id,
     j.id as job_id,
+    j.name as job_name,
     j.labels,
     j.created_at as job_created_at,
     j.started_at as job_started_at,
@@ -63,7 +64,7 @@ FROM POSTGRES_QUERY('steampipe', '
   from
     steampipe.github.github_actions_repository_workflow_job j
   where
-    j.created_at > now() - interval ''1 day''
+    j.created_at > now() - interval ''7 days''
     and (repository_full_name, run_id) in (
       select
         repository_full_name,

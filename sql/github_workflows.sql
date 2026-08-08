@@ -1,7 +1,6 @@
-INSTALL httpfs; -- Use OpenSSL for encryption
-ATTACH 'data/ci_metrics.db' AS ci_metrics (ENCRYPTION_KEY getenv('DUCKDB_ENCRYPTION_KEY'));
-
 ATTACH '' AS steampipe (TYPE postgres, SECRET sp_pg_secret);
+
+SET preserve_insertion_order=false;
 
 CREATE OR REPLACE TABLE ci_metrics.github_workflows AS
 FROM POSTGRES_QUERY('steampipe', '

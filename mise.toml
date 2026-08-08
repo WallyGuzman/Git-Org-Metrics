@@ -3,8 +3,8 @@ minimum_release_age = "7d"
 
 [tools]
 act = "0.2.89"
-gh = "2.95.0"
-node = "26.3.0"
+gh = "2.97.0"
+node = "26.5.1"
 steampipe = "2.4.4"
-uv = "0.11.19"
-zizmor = "1.25.2"
+uv = "0.12.1"
+zizmor = "1.28.0"

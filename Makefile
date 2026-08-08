@@ -13,10 +13,10 @@ run_steampipe:
 
 run_feeds:
 	# These run as separate queries, but they will reuse the steampipe cache to avoid hitting rate limits
-	time uv run duckdb < sql/github_repos.sql
-	time uv run duckdb < sql/github_workflows.sql
-	time uv run duckdb < sql/github_runs.sql
-	time uv run duckdb < sql/github_jobs.sql
+	time uv run duckdb data/ci_metrics.db < sql/github_repos.sql
+	time uv run duckdb data/ci_metrics.db < sql/github_workflows.sql
+	time uv run duckdb data/ci_metrics.db < sql/github_runs.sql
+	time uv run duckdb data/ci_metrics.db < sql/github_jobs.sql
 
 clean:
 	steampipe service stop --force
